@@ -1,0 +1,69 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery Effect</title>
+    <style>
+        #result{
+            background-color: turquoise;
+            border: 3px solid #000;
+            padding: 20px;
+            margin-top: 20px;
+            /*ซ่อนกล่อง*/
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn_show">Show</button>
+    <button id="btn_hide">Hide</button>
+    <button id="btn_fadein">Fade In</button>
+    <button id="btn_fadeout">Fade Out</button>
+    <button id="btn_slideup">Slide Up</button>
+    <button id="btn_slidedown">Slide Down</button>
+    <button id="btn_slidetoggle">Slide Toggle</button>
+
+    <div id="result">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam sit totam voluptatem harum. Porro similique reiciendis ex quasi obcaecati perferendis amet. Suscipit, consectetur nisi architecto incidunt sed molestiae aliquam possimus?
+    </div>
+    <script src="js/jquery-2.2.4.min.js"></script>
+    <script>
+        $(function(){
+            $('#btn_show').click(function(){
+                $('#result').show(); // Effect โชว์ข้อมูลออกมา
+            });
+
+            $('#btn_hide').click(function(){
+                $('#result').hide(); // Effect ซ่อนข้อมูล
+            });
+
+            $('#btn_fadein').click(function(){
+                $('#result').fadeIn(1000); // Effect แสดงข้อมูลแบบ fade เข้ามา
+            });
+
+            $('#btn_fadeout').click(function(){
+                $('#result').fadeOut(200); // Effect ซ่อนข้อมูลแบบ fade ออกไป
+            });
+
+            $('#btn_slideup').click(function(){
+                $('#result').slideUp(200); // Effect แสดงข้อมูลแบบ Slide เข้ามา
+            });
+
+            $('#btn_slidedown').click(function(){
+                $('#result').slideDown(200); // Effect ซ่อนข้อมูลแบบ Slide ออกไป
+            });
+
+            $('#btn_slidetoggle').click(function(){
+                $('#result').slideToggle(200); // Effect ซ่อนและแสดง
+            });
+
+            /* ทำงานอัตโนมัติตลอดเวลา */
+            setInterval(function(){
+                $('#result').slideToggle(200); // Effect ซ่อนและแสดง
+            },1000);
+        });
+
+    </script>
+</body>
+</html>

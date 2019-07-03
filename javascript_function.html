@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript Function</title>
+</head>
+<body>
+
+    <button onkeypress="wakeup()" id="btn">Wakup Now</button>
+    <script>
+
+        document.getElementById("btn").focus();
+
+        function wakeup(){
+            alert("Wakeup Now!!!");
+        }
+
+        function showinfo(name,age){
+            // alert("Hello "+name+ " Your age is "+age);
+            return name+age;
+        }
+
+        var name = prompt("ป้อนชื่อ ");
+        var age = prompt("ป้อนอายุ")
+        alert(showinfo(name,age));
+
+        // wakeup();
+    </script>
+</body>
+</html>

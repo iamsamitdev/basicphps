@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gallery with JavaScript</title>
+    <style>
+        div{
+            width: 23%;
+            float: left;
+            padding: 20px; /*ช่องว่างระหว่างกล่อง*/
+        }
+        h1{
+            font-size: 56px;
+            text-align: center;
+        }
+
+        img{
+            width: 100%;
+            border-radius: 20px; /*การใส่มุมโค้ง */
+        }
+
+        h2{
+            text-align: center
+        }
+    </style>
+</head>
+<body>
+    <h1>Gallery with JavaScript</h1>
+    <script>
+        for(var row=1;row<=12;row++)
+        {
+            document.write("<div>");
+            document.write("<img src='images/gallery/gal"+row+".jpg'>");
+            document.write("<h2>Image "+row+"</h2>");
+            document.write("</div>");
+        }
+    </script>   
+</body>
+</html>

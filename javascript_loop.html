@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript Loop</title>
+</head>
+<body>
+    <script>
+        var a;
+
+        for(a=1;a<=10;a++){
+            console.log(a+" Welcome");
+            if(a%2==0){
+                document.write("<font color=red>"+a+" Welcome</font><br>");
+            }else{
+                document.write("<font color=blue>"+a+" Welcome</font><br>");
+            }
+        }
+
+        var b = 1;
+        while(b<=10){
+            if(b==5){
+                document.write(b+" <b>Hello While loop</b><br>");
+            }else{
+                document.write(b+" Hello While loop<br>");
+            }
+
+            if(b==8){
+                break;
+            }
+            b++;
+        }
+    </script>
+</body>
+</html>

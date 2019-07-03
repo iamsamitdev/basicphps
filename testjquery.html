@@ -1,0 +1,60 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test jQuery</title>
+    <style>
+        .msg{
+            border:2px solid brown;
+            background-color: blanchedalmond;
+            font-size: 20px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <ul id="list1">
+        <li class="a">item 1</li>
+        <li class="a">item 2</li>
+        <li class="b">item 3</li>
+        <li class="b">item 4</li>
+    </ul>
+    <p class="a">This is paragraph 1</p>
+    <p>This is paragraph 2</p>
+    <p class="b">This is paragraph 3</p>
+    <p>This is paragraph 4</p>
+
+    <div id="msg">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio corporis enim quas quibusdam. Totam, exercitationem molestiae? Laudantium id, repudiandae, ipsa eligendi praesentium voluptas consequuntur adipisci architecto amet cum commodi voluptate!
+    </div><br>
+
+    <button id="btnclick">Event Click</button>
+
+    <script src="js/jquery-2.2.4.min.js"></script>
+    <script>
+        /* เขียนแบบเต็ม */
+        $(document).ready(function(){
+           // alert("OK");
+        });
+
+        /* เขียนแบบย่อ */
+        $(function(){
+            $('p').css('background-color','#FF0');
+            $('.a').css('background-color','#0C6');
+            $('#list1').css('background-color','blue');
+            $('p.b').css('background-color','grey').css('color','white');
+
+            $('#msg').addClass('msg');
+            $('#msg').removeClass('msg');
+            $('#msg').toggleClass('msg');
+
+            // jQuery Event
+            $('#btnclick, #msg').click(function(){
+                // alert("OKKK");
+                $('#msg').toggleClass('msg');
+            });
+        });
+    </script>
+</body>
+</html>

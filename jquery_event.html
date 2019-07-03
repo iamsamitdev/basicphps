@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery Event</title>
+</head>
+<body>
+    <label for="">Fullname: </label>
+    <input type="text" name="fullname" id="fullname">
+    <button id="submit">Submit</button>
+    <script src="js/jquery-2.2.4.min.js"></script>
+    <script>
+        $(function(){
+            // Set focus() 
+            $("#fullname").focus();
+
+            // รับข้อมูลจากฟอร์มเมื่อคลิ๊กปุ่ม submit
+            $('#submit').click(function(){
+                var fullname = $('#fullname').val();
+                alert(fullname);
+            });
+
+            // เขียนฟังก์ชันเช็คการกดแป้น Enter
+            $(document).on('keypress', function(e){
+                // alert(e.which);
+                if(e.which == 13){
+                    var fullname = $('#fullname').val();
+                    alert(fullname);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

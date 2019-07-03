@@ -1,0 +1,131 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery input data to table</title>
+
+    <style>
+        .col-left{
+            width: 20%;
+            float: left;
+            border: 2px solid gray;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        .col-right{
+            width: 70%;
+            float: right;
+            border: 2px solid gray;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        .form-group{
+            overflow: hidden;
+            margin-bottom: 8px;
+            margin-top: 8px;
+        }
+
+        label{
+            width: 80px;
+            float: left;
+        }
+
+        input{
+            width: 200px;
+            float: left;
+        }
+
+        table{
+            width: 100%;
+        }
+
+        table, tr, th, td{
+            border: 1px solid teal;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+        table thead{
+            background-color: cornflowerblue;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+        <h1>Manage Users</h1>
+        <div class="col-left">
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="">Fullname</label>
+                    <input type="text" name="fullname" id="fullname">
+                </div>
+                <div class="form-group">
+                    <label for="">Email</label>
+                    <input type="email" name="email" id="email">
+                </div>
+                <div class="form-group">
+                    <label for="">Tel</label>
+                    <input type="tel" name="tel" id="tel">
+                </div>
+                <div class="form-group">
+                    <label for="">&nbsp;</label>
+                    <button id="submit" type="button">Submit</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-right">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Fullname</th>
+                        <th>Email</th>
+                        <th>Tel</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+        </div>
+        <script src="js/jquery-2.2.4.min.js"></script>
+        <script>
+            $(function(){
+                $('#submit').click(function(){
+                    
+                    // รับค่าจากฟอร์ม
+                    var fullname = $('#fullname').val();
+                    var email = $('#email').val();
+                    var tel = $('#tel').val();
+
+                    //alert(fullname+email+tel);
+                    // นับจำนวนแถวข้อมูลที่มีในตาราง
+                    var countrow = $('table tbody tr').length;
+                    // alert(countrow);
+
+                    // ตรวจข้อมูลที่รับมาก่อนเติมลงตาราง
+                    if(fullname != "" && email != "" && tel != ""){
+                        var trstring = "<tr>"+
+                                            "<td>"+(countrow+1)+"</td>"+
+                                            "<td>"+fullname+"</td>"+
+                                            "<td>"+email+"</td>"+
+                                            "<td>"+tel+"</td>"+
+                                            "</tr>";
+                        // เติมข้อมูลลงในตาราง
+                        $('table tbody').append(trstring);
+
+                        // เคลียร์ข้อมูลออกจากฟอร์ม
+                        $('form').trigger('reset');
+
+                        // โฟกัสเคอร์เซอร์ไปที่ช่อง fullname
+                        $('#fullname').focus();
+                    }else{
+                        alert("กรอกข้อมูลให้ครบก่อน");
+                    }
+                });
+            });
+        </script>
+</body>
+</html>
